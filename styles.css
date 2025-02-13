@@ -1,0 +1,151 @@
+/* Import Google Font for heavy h2 */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@900&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    width: 350px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Style for h2 - Heavier Font */
+.login-container h2 {
+    font-family: 'Oswald', sans-serif; /* Super bold font */
+    font-weight: 900;
+    font-size: 26px;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Add focus effect */
+.input-group input:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+    transform: scale(1.02);
+}
+
+/* Dashboard Styling */
+.dashboard-container {
+    text-align: center;
+    margin-top: 15%;
+    font-family: Arial, sans-serif;
+}
+
+/* Bold Centered Welcome Message */
+.dashboard-container h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Error Message Styling */
+.error-msg {
+    color: red;
+    font-weight: bold;
+}
+
+/* Logout Button */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Styles for Register Page */
+.register-container {
+    width: 350px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.register-container a {
+    display: block;
+    margin-top: 10px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.register-container a:hover {
+    text-decoration: underline;
+}
+
+.register-link {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.register-link a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
