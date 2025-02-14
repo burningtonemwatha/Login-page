@@ -5,7 +5,7 @@ $db = 'login_prog';
 $user = 'root';
 $pass = '';
 
-// Establish database connection
+// Establish secure database connection
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -16,7 +16,7 @@ $success = ""; // Variable to store success messages
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST['username']);
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash password for security
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Secure password hashing
 
     // Prevent SQL Injection using prepared statements
     $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
@@ -40,20 +40,18 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script> <!-- Link to JavaScript -->
 </head>
 <body>
     <div class="register-container">
         <h2>Register</h2>
-        <?php if ($error): ?>
-            <p class="error"><?php echo $error; ?></p>
-        <?php endif; ?>
-        <?php if ($success): ?>
-            <p class="success"><?php echo $success; ?></p>
-        <?php endif; ?>
-        <form action="register.php" method="POST">
+        <p id="error-message" class="error"><?php echo $error; ?></p>
+        <p id="success-message" class="success"><?php echo $success; ?></p>
+        <form id="registerForm" action="register.php" method="POST">
             <div class="input-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
+                <p id="username-status"></p>
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
@@ -61,7 +59,7 @@ $conn->close();
             </div>
             <button type="submit">Register</button>
         </form>
-        <a href="login.php">Already have an account? Login</a>
+        <p class="login-link">Already have an account? <a href="login.php">Login</a></p>
     </div>
 </body>
 </html>
