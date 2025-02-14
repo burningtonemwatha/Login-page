@@ -7,17 +7,34 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f4;
     font-family: Arial, sans-serif;
+    background: url('weblandscape.jpg') no-repeat center center fixed; /* Background image */
+    background-size: cover;
+    position: relative;
 }
 
+/* Blur overlay effect */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for contrast */
+    backdrop-filter: blur(10px); /* Blurs background */
+    z-index: -1; /* Places it behind content */
+}
+
+/* Translucent login box */
 .login-container {
-    width: 350px;
+    width: 400px;
     padding: 20px;
-    background: white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.15); /* Glass effect */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     text-align: center;
+    backdrop-filter: blur(15px); /* Glassmorphism effect */
 }
 
 /* Style for h2 - Heavier Font */
@@ -25,38 +42,60 @@ body {
     font-family: 'Oswald', sans-serif; /* Super bold font */
     font-weight: 900;
     font-size: 26px;
-    color: #333;
+    color: white;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
 
 .input-group {
-    margin-bottom: 15px;
+    position: relative; /* Ensure the Show button is positioned relative to this container */
+    margin-bottom: 25px; /* Increased margin for better spacing */
     text-align: left;
 }
 
 .input-group label {
     display: block;
     font-weight: bold;
+    color: white;
 }
 
 .input-group input {
-    width: 95%;
-    padding: 10px;
-    border: 1px solid #ccc;
+    width: 100%; /* Full width to accommodate the Show button */
+    padding: 10px 40px 10px 10px; /* Add padding on the right for the Show button */
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     font-size: 14px;
+    background: rgba(255, 255, 255, 0.2); /* Transparent effect */
+    color: white;
+    box-sizing: border-box; /* Ensure padding doesn't increase the width */
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Show/Hide button */
+#togglePassword {
+    position: relative;
+    left: 1px;
+    top: 83%; /* Center vertically */
+    transform: translateY(50%); /* Center vertically */
+    padding: 6px 12px;
+    font-size: 14px; /* Slightly smaller font */
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-/* Add focus effect */
-.input-group input:focus {
-    border-color: #007BFF;
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+#togglePassword:hover {
+    background: #0056b3;
 }
 
-button {
+/* Login button */
+button[type="submit"] {
     width: 100%;
     padding: 12px;
     background: #007BFF;
@@ -67,11 +106,51 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    margin-top: 15px; /* Adjusted margin for better spacing */
 }
 
-button:hover {
+button[type="submit"]:hover {
     background: #0056b3;
     transform: scale(1.02);
+}
+
+/* Styles for Register Page */
+.register-container {
+    width: 350px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15); /* Same glass effect */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    backdrop-filter: blur(15px);
+}
+
+.register-container a {
+    display: block;
+    margin-top: 10px;
+    color: #FFD700;
+    text-decoration: none;
+}
+
+.register-container a:hover {
+    text-decoration: underline;
+}
+
+.register-link {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+}
+
+.register-link a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
 }
 
 /* Dashboard Styling */
@@ -85,7 +164,7 @@ button:hover {
 .dashboard-container h1 {
     font-size: 28px;
     font-weight: bold;
-    color: #333;
+    color: black;
 }
 
 /* Error Message Styling */
@@ -111,41 +190,4 @@ button:hover {
 .btn:hover {
     background: #0056b3;
     transform: scale(1.05);
-}
-
-/* Styles for Register Page */
-.register-container {
-    width: 350px;
-    padding: 20px;
-    background: white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    text-align: center;
-}
-
-.register-container a {
-    display: block;
-    margin-top: 10px;
-    color: #007BFF;
-    text-decoration: none;
-}
-
-.register-container a:hover {
-    text-decoration: underline;
-}
-
-.register-link {
-    margin-top: 15px;
-    font-size: 14px;
-    text-align: center;
-}
-
-.register-link a {
-    color: #007BFF;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.register-link a:hover {
-    text-decoration: underline;
 }
