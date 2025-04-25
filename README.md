@@ -20,4 +20,4 @@ This is a **fully functional login system** with:
 - **SQL injection protection** using **prepared statements**.  
 - **AJAX username check** (verifies if a username already exists).  
 
-Check Out the Live Website (http://myloginapp.kesug.com/)
+[Check Out the Live Website](http://myloginapp.kesug.com/)
