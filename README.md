@@ -19,3 +19,5 @@ This is a **fully functional login system** with:
 - **Password hashing** with `password_hash()` for security.  
 - **SQL injection protection** using **prepared statements**.  
 - **AJAX username check** (verifies if a username already exists).  
+
+Check Out the
